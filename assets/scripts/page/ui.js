@@ -25,6 +25,9 @@ const getPagesSuccess = function (data) {
   }
 }
 
+const getPagesFailure = function () {
+}
+
 const getMyPagesSuccess = function (data) {
   console.log('getMyPagesSuccess data is', data)
   console.log('getMyPagesSuccess store is', store)
@@ -41,17 +44,36 @@ const getMyPagesSuccess = function (data) {
   }
 }
 
+const getMyPagesFailure = function () {
+}
+
 const getUpdatePageSuccess = function (data) {
-  $('.status').text('You have successfully created a page!')
+  $('.status').text('You have successfully updated a page!')
   setTimeout(() => $('.status').text(''), 2000)
   $('#updateModal').modal('toggle')
   $('input[type=text]').val('')
+}
+
+const getUpdatePageFailure = function () {
+}
+
+const getDeletePageSuccess = function () {
+  $('.status').text('You have successfully deleted a page!')
+  setTimeout(() => $('.status').text(''), 2000)
+}
+
+const getDeletePageFailure = function () {
 }
 
 module.exports = {
   createPageSuccess,
   createPageFailure,
   getPagesSuccess,
+  getPagesFailure,
   getMyPagesSuccess,
-  getUpdatePageSuccess
+  getMyPagesFailure,
+  getUpdatePageSuccess,
+  getUpdatePageFailure,
+  getDeletePageSuccess,
+  getDeletePageFailure
 }
