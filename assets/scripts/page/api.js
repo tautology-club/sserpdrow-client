@@ -16,6 +16,18 @@ const createPage = function (data) {
   })
 }
 
+const getPages = function () {
+  return $.ajax({
+    url: config.apiUrl + '/pages',
+    method: 'GET',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  createPage
+  createPage,
+  getPages
 }

@@ -12,10 +12,25 @@ const onCreatePage = (event) => {
     .catch(ui.createPageFailure)
 }
 
+const onGetPages = (event) => {
+  event.preventDefault()
+  api.getPages()
+    .then(ui.getPagesSuccess)
+}
+
+const onGetMyPages = (event) => {
+  event.preventDefault()
+  api.getPages()
+    .then(ui.getMyPagesSuccess)
+}
+
 const addHandlers = () => {
   $('#create-page').on('submit', onCreatePage)
+  $('#getPages').on('click', onGetPages)
+  $('#getMyPages').on('click', onGetMyPages)
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  onGetPages
 }
