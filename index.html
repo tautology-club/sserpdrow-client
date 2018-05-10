@@ -121,9 +121,42 @@
   </div>
 </nav>
       <!-- Navigation End  -->
-
+      <!-- status messages -->
+      <div>
+        <p class="status"></p>
+      </div>
       <!--Handlebars Content -->
-      <div class="content">
+      <div class="main-content">
+        <div class="dashboard">
+          <!-- Create Page Button Trigger Modal -->
+          <input required type="button" class="btn btn-default hidden  create-page" data-toggle="modal" data-target="#myModalCreatePage" value="Create Page">
+
+
+          <!-- Create Page Modal Begin -->
+          <div class="modal fade" id="myModalCreatePage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Create Page</h4>
+                </div>
+                <div class="modal-body">
+                  <form id="create-page">
+                    <input required type="text" name="page[name]" placeholder="Name">
+                    <input required type="text" name="page[text]" placeholder="Text">
+                    <input required type="submit" value="Create Page">
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <h2 class="authmessage2"></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Create Page Modal End  -->
+        </div>
+        <div class="content">
+        </div>
       </div>
       <!--End Handlebars Content  -->
 
