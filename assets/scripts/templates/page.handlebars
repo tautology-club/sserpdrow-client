@@ -1,23 +1,18 @@
 {{#each pages as |page|}}
 <div>
-  <div>
-  <div>
-  <h1 data-id="{{page.id}}" class="my-page"> <small>{{page.title}}</small></h1>
+  <h1 data-id="{{page.id}}" class="my-page"> <small>{{page.name}}</small></h1>
   <ul data-id="{{page.id}}">
-    Title: {{#if page.title}}
-      {{page.title}}
+    Name: {{#if page.name}}
+      {{page.name}}
     {{else}}
-      No title provided.
+      No name provided.
     {{/if}}
 
-    <div></div>
-
-  ID: {{#if page.id}}
-      {{page.id}}
+  Text: {{#if page.text}}
+      {{page.text}}
     {{else}}
-      No ID provided.
+      No text provided.
     {{/if}}
   </ul>
-  </div>
 </div>
 {{/each}}
