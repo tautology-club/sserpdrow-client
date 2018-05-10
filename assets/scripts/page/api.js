@@ -40,8 +40,20 @@ const updatePages = function (data, pageId) {
   })
 }
 
+const deletePage = function (pageId) {
+  return $.ajax({
+    url: config.apiUrl + '/pages/' + pageId,
+    method: 'DELETE',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   createPage,
   getPages,
-  updatePages
+  updatePages,
+  deletePage
 }
