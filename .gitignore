@@ -102,3 +102,6 @@ jspm_packages
 
 
 # End of https://www.gitignore.io/api/node
+
+# package-lock.json won't play nicely so it's not being allowed to play at all
+package-lock.json
