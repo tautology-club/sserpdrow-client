@@ -25,11 +25,11 @@
             <h4 class="modal-title">Update Page</h4>
           </div>
         <div class="modal-body" data-id="{{page._id}}">
-          <form id="update-page" data-id="{{page._id}}">
+          <form class="update-page" data-id="{{page._id}}">
             <p>Name: <input required type="text" name="page[name]" placeholder="New Name"></p>
             <textarea required type="text" name="page[text]" maxlength="2000" cols="30" rows="4" placeholder="New Text Here"></textarea>
             <br>
-            <input type="submit" data-id="{{page._id}}" name="submit" value="Update Instrument">
+            <input type="submit" data-id="{{page._id}}" name="submit" value="Update Page">
           </form>
         </div>
       <div class="modal-footer">

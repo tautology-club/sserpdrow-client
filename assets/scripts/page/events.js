@@ -9,6 +9,7 @@ const onCreatePage = (event) => {
   const data = getFormFields(event.target)
   api.createPage(data)
     .then(ui.createPageSuccess)
+    .then(() => onGetMyPages(event))
     .catch(ui.createPageFailure)
 }
 
@@ -50,8 +51,8 @@ const addHandlers = () => {
   $('#create-page').on('submit', onCreatePage)
   $('#getPages').on('click', onGetPages)
   $('#getMyPages').on('click', onGetMyPages)
-  $('.content').on('submit', '#update-page', onUpdatePages)
-  $('.content').on('click', '.destroy-id', onDeletePage)
+  $('.page-content').on('submit', '.update-page', onUpdatePages)
+  $('.page-content').on('click', '.destroy-id', onDeletePage)
 }
 
 module.exports = {

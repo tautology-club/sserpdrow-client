@@ -1,2 +1,12 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+$border-color: #06c;
+
+.content,
+.blog {
+  border: 1px solid $border-color;
+  height: 300px;
+  overflow: scroll;
+}

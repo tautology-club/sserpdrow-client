@@ -1,0 +1,46 @@
+{{#each blogs as |blog|}}
+<div>
+  <h1 data-id="{{blog._id}}" class="my-blog"> <small>{{blog.title}}</small></h1>
+  <ul data-id="{{blog._id}}">
+    Name: {{#if blog.title}}
+      {{blog.title}}
+    {{else}}
+      No title provided.
+    {{/if}}
+<br>
+  Text: {{#if blog.body}}
+      {{blog.body}}
+    {{else}}
+      No body provided.
+    {{/if}}
+  <br>
+    <input type="button" class="btn classic" data-id="{{blog._id}}" data-toggle="modal" data-target="#updateModal" name="Update" id="update-id" value="Update">
+
+    <!--Begin Update Modal -->
+    <div class="modal" id="updateModal"  tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Update Blog Post</h4>
+          </div>
+        <div class="modal-body" data-id="{{blog._id}}">
+          <form class="update-blog" data-id="{{blog._id}}">
+            <p>Name: <input required type="text" name="blog[title]" placeholder="New Name"></p>
+            <textarea required type="text" name="blog[body]" maxlength="2000" cols="30" rows="4" placeholder="New Text Here"></textarea>
+            <br>
+            <input type="submit" data-id="{{blog._id}}" name="submit" value="Update Blog">
+          </form>
+        </div>
+      <div class="modal-footer">
+
+      </div>
+    </div>
+  </div>
+</div>
+<!--End of Update Modal   -->
+    <button type="button" class="btn classic destroy-id" data-id="{{blog._id}}" name="Remove">Remove</button>
+</ul>
+</div>
+<hr>
+{{/each}}
