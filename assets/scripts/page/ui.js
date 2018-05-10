@@ -36,14 +36,22 @@ const getMyPagesSuccess = function (data) {
   })
   const getMyPagesHTML = showMyPagesTemplate({pages: myPages})
   $('.content').html(getMyPagesHTML)
-  if (data.pages.length === 0) {
+  if (myPages.length === 0) {
     $('.content').html('<h2>No pages were found</h2>')
   }
+}
+
+const getUpdatePageSuccess = function (data) {
+  $('.status').text('You have successfully created a page!')
+  setTimeout(() => $('.status').text(''), 2000)
+  $('#updateModal').modal('toggle')
+  $('input[type=text]').val('')
 }
 
 module.exports = {
   createPageSuccess,
   createPageFailure,
   getPagesSuccess,
-  getMyPagesSuccess
+  getMyPagesSuccess,
+  getUpdatePageSuccess
 }
