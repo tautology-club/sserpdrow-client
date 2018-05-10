@@ -1,0 +1,23 @@
+{{#each pages as |page|}}
+<div>
+  <div>
+  <div>
+  <h1 data-id="{{page.id}}" class="my-page"> <small>{{page.title}}</small></h1>
+  <ul data-id="{{page.id}}">
+    Title: {{#if page.title}}
+      {{page.title}}
+    {{else}}
+      No title provided.
+    {{/if}}
+
+    <div></div>
+
+  ID: {{#if page.id}}
+      {{page.id}}
+    {{else}}
+      No ID provided.
+    {{/if}}
+  </ul>
+  </div>
+</div>
+{{/each}}
