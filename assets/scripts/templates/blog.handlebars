@@ -1,0 +1,19 @@
+{{#each blogs as |blog|}}
+<div>
+  <h1 data-id="{{blog._id}}" class="my-blog"> <small>{{blog.title}}</small></h1>
+  <ul data-id="{{blog._id}}">
+    Name: {{#if blog.title}}
+      {{blog.title}}
+    {{else}}
+      No title provided.
+    {{/if}}
+<br>
+
+  Text: {{#if blog.body}}
+      {{blog.body}}
+    {{else}}
+      No body provided.
+    {{/if}}
+  </ul>
+</div>
+{{/each}}

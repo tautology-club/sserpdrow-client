@@ -19,9 +19,9 @@ const createPageFailure = function () {
 const getPagesSuccess = function (data) {
   console.log('getPagesSuccess data is', data)
   const getPagesHTML = showPagesTemplate({pages: data.pages})
-  $('.content').html(getPagesHTML)
+  $('.page-content').html(getPagesHTML)
   if (data.pages.length === 0) {
-    $('.content').html('<h2>No pages were found</h2>')
+    $('.page-content').html('<h2>No pages were found</h2>')
   }
 }
 
@@ -38,9 +38,9 @@ const getMyPagesSuccess = function (data) {
     }
   })
   const getMyPagesHTML = showMyPagesTemplate({pages: myPages})
-  $('.content').html(getMyPagesHTML)
+  $('.page-content').html(getMyPagesHTML)
   if (myPages.length === 0) {
-    $('.content').html('<h2>No pages were found</h2>')
+    $('.page-content').html('<h2>No pages were found</h2>')
   }
 }
 
